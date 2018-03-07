@@ -21,13 +21,8 @@ public partial class MapReduce<T> {
     }
     
     public async Task<T> ReduceAsync(ModReduce mr) {
-        T ret = data[0];
-
         return await Task.Run(() => {
-            for (int i = 1; i < Count; i++) {
-                ret = mr(ret, data[i]);
-            }
-            return ret;
+            return Reduce(mr);
         });
     }
 }

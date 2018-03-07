@@ -9,11 +9,13 @@ public class DataReaderEnum : IEnumerator {
     protected int position;
     protected double[] _data;
 
+    // Set iterator and data
     public DataReaderEnum(double[] data) {
         position = -1;
         _data = data;
     }
 
+    // Increment iterator
     public bool MoveNext() {
         position++;
         return (position < _data.Length);
