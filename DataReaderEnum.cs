@@ -11,7 +11,7 @@ public class DataReaderEnum : IEnumerator {
 
     public bool IEnumerator.MoveNext() {
         position++;
-        return (position < data.Length);
+        return (position < _data.Length);
     }
 
     public void IEnumerator.Reset() {
