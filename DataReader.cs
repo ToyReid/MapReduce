@@ -2,7 +2,7 @@ using System.IO;
 using System.Collections;
 
 public class DataReader : IEnumerable {
-    protected double[] doublesArray; // RENAME
+    protected double[] doublesArray;
 
     public DataReader(string fileName) {
         try {
@@ -43,5 +43,12 @@ public class DataReader : IEnumerable {
 
     public DataReaderEnum GetEnumerator() {
         return new DataReaderEnum(doublesArray);
+    }
+
+    // Indexer
+    public double this[int i] {
+        get {
+            return doublesArray[i];
+        }
     }
 }
