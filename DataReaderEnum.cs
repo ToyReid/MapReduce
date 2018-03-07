@@ -1,3 +1,8 @@
+// Toy Reid
+// CS365 - Lab 4
+// 03/07/2018
+
+using System;
 using System.Collections;
 
 public class DataReaderEnum : IEnumerator {
@@ -9,16 +14,22 @@ public class DataReaderEnum : IEnumerator {
         _data = data;
     }
 
-    public bool IEnumerator.MoveNext() {
+    public bool MoveNext() {
         position++;
         return (position < _data.Length);
     }
 
-    public void IEnumerator.Reset() {
+    public void Reset() {
         position = -1;
     }
 
-    public Person Current {
+    object IEnumerator.Current {
+        get {
+            return Current;
+        }
+    }
+
+    public double Current {
         get {
             try {
                 return _data[position];
